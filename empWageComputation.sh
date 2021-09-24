@@ -4,12 +4,15 @@ echo "Welcome to Employee Wage Computation Program"
 
 
 isPresent=1
+wagePerHr=20
 randomCheck=$((RANDOM%2))
-
 if [ $isPresent -eq $randomCheck ]
 then
-	echo "Employee is Present"
+	empHrs=8
 else
-	echo "Employee is Absent"
+	empHrs=0
 fi
+totalWageInDay=$(($empHrs*$wagePerHr))
+echo "Total wage in day : "$totalWageInDay
+
 
