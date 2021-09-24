@@ -3,14 +3,18 @@
 echo "Welcome to Employee Wage Computation Program"
 
 
-isPresent=1
+isFullTime=1
+isPartTime=2
 wagePerHr=20
-randomCheck=$((RANDOM%2))
-if [ $isPresent -eq $randomCheck ]
+randomCheck=$((RANDOM%3))
+if [ $isFullTime -eq $randomCheck ]
 then
 	empHrs=8
+elif [ $isPartTime -eq $randomCheck ]
+then
+	empHrs=4
 else
-	empHrs=0
+        empHrs=0
 fi
 totalWageInDay=$(($empHrs*$wagePerHr))
 echo "Total wage in day : "$totalWageInDay
